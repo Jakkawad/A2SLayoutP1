@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "845A5DE21D76BC4700C6F7C2"
+               BuildableName = "A2SLayoutP1.app"
+               BlueprintName = "A2SLayoutP1"
+               ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "845A5DF61D76BC4700C6F7C2"
+               BuildableName = "A2SLayoutP1Tests.xctest"
+               BlueprintName = "A2SLayoutP1Tests"
+               ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "845A5E011D76BC4800C6F7C2"
+               BuildableName = "A2SLayoutP1UITests.xctest"
+               BlueprintName = "A2SLayoutP1UITests"
+               ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "845A5DE21D76BC4700C6F7C2"
+            BuildableName = "A2SLayoutP1.app"
+            BlueprintName = "A2SLayoutP1"
+            ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "845A5DE21D76BC4700C6F7C2"
+            BuildableName = "A2SLayoutP1.app"
+            BlueprintName = "A2SLayoutP1"
+            ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "845A5DE21D76BC4700C6F7C2"
+            BuildableName = "A2SLayoutP1.app"
+            BlueprintName = "A2SLayoutP1"
+            ReferencedContainer = "container:A2SLayoutP1.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
