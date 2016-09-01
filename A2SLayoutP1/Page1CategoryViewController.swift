@@ -8,8 +8,26 @@
 
 import UIKit
 
-class Page1CategoryViewController: UIViewController {
+class Page1CategoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var categoryArray:[String] = ["หมวดหมู่ทั้งหมด", "กล้อง", "รองเท้า"]
 
+    @IBOutlet weak var tableView:UITableView!
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categoryArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+        cell0?.textLabel?.text = categoryArray[indexPath.row]
+        return cell0!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -10,16 +10,35 @@ import UIKit
 
 class Page1FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var sortArray:[String] = ["สินค้าล่าสุด", "ราคาต่ำ - สูง", "ราคาสูง - ต่ำ", "เรียงตามชื่อ A-Z", "เรียงตามชื่อ Z-A"]
+    var categoryArray:[String] = []
+    var ratingArray:[String] = []
+    
     var sortSelected:String!
-    var categorySelected:String!
+    var categorySubSelected:String!
     var ratingSelected:[String]!
-    var priceStart:Int!
-    var priceEnd:Int!
+    var priceStart:String!
+    var priceEnd:String!
 
     @IBOutlet weak var tableView:UITableView!
     
     @IBAction func btnDone(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        delay(0.5) {
+            self.tableView.reloadData()
+            
+            delay(0.2) {
+                
+                print("ArrayFilter = \(self.sortSelected)")
+                print("Rating = \(self.ratingSelected)")
+                print("Category = \(self.categorySubSelected)")
+                print("PriceStart = \(self.priceStart)")
+                print("PriceEnd = \(self.priceEnd)")
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            }
+        }
+        //self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -34,13 +53,13 @@ class Page1FilterViewController: UIViewController, UITableViewDataSource, UITabl
         if indexPath.row == 0 {
             let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
             if sortSelected != nil {
-                cell0?.textLabel?.text = sortSelected
+                cell0?.detailTextLabel?.text = sortSelected
             }
             return cell0!
         } else if indexPath.row == 1 {
             let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1")
-            if categorySelected != nil {
-                cell1?.textLabel?.text = categorySelected
+            if categorySubSelected != nil {
+                cell1?.detailTextLabel?.text = categorySubSelected
             }
             return cell1!
         } else if indexPath.row == 2 {
@@ -62,8 +81,10 @@ class Page1FilterViewController: UIViewController, UITableViewDataSource, UITabl
             cell2?.detailTextLabel?.text = ratingText
             return cell2!
         } else {
-            let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3")
-            return cell3!
+            let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3") as! Page1FilterCell3TableViewCell
+            priceStart = cell3.priceStart
+            priceEnd = cell3.priceEnd
+            return cell3
         }
     }
     
@@ -89,6 +110,8 @@ class Page1FilterViewController: UIViewController, UITableViewDataSource, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SortSegue" {
             print("Sort")
+            let pageSort = segue.destinationViewController as! Page1SortViewController
+            pageSort.sortArray = sortArray
         } else if segue.identifier == "CategorySegue" {
             print("Category")
         } else if segue.identifier == "RatingSegue" {

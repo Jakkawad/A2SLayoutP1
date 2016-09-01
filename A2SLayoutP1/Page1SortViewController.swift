@@ -9,6 +9,8 @@
 import UIKit
 
 class Page1SortViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var sortArray = []
 
     @IBOutlet weak var tableView:UITableView!
     
@@ -17,14 +19,22 @@ class Page1SortViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return sortArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+        cell0?.textLabel?.text = sortArray[indexPath.row] as? String
         return cell0!
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let pageFilter = self.navigationController?.viewControllers[0] as! Page1FilterViewController
+        pageFilter.sortSelected = sortArray[indexPath.row] as! String
+        
+        navigationController?.popViewControllerAnimated(true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
