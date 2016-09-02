@@ -1,14 +1,14 @@
 //
-//  Page1DetailCell1TableViewCell.swift
+//  Page1DetailCell5TableViewCell.swift
 //  A2SLayoutP1
 //
-//  Created by Jakkawad Chaiplee on 9/2/2559 BE.
+//  Created by Jakkawad Chaiplee on 9/1/2559 BE.
 //  Copyright © 2559 All2Sale. All rights reserved.
 //
 
 import UIKit
 
-class Page1DetailCell1TableViewCell: UITableViewCell {
+class Page1DetailCell5TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

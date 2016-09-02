@@ -13,19 +13,21 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView:UITableView!
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 1
         } else if section == 1 {
-            return 2
+            return 1
         } else if section == 2 {
-            return 2
+            return 1
         } else if section == 3 {
             return 1
         } else if section == 4 {
+            return 1
+        } else if section == 5 {
             return 3
         } else {
             return 1
@@ -34,77 +36,47 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
-                return cell0!
-            } else {
-                let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1") as! Page1DetailCell1TableViewCell
-                return cell1
-            }
+            let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0") as? Page1DetailCell0TableViewCell
+            return cell0!
         } else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2")
-                return cell2!
-            } else {
-                let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3")
-                return cell3!
-            }
+            let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1") as? Page1DetailCell1TableViewCell
+            return cell1!
         } else if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4")
-                return cell4!
-            } else {
-                let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5")
-                return cell5!
-            }
+            let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2") as? Page1DetailCell2TableViewCell
+            return cell2!
         } else if indexPath.section == 3 {
-            let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6")
-            return cell6!
+            let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3") as? Page1DetailCell3TableViewCell
+            return cell3!
         } else if indexPath.section == 4 {
-            if indexPath.row == 0 {
-                let cell7 = tableView.dequeueReusableCellWithIdentifier("tableCell7")
-                return cell7!
-            } else if indexPath.row == 1 {
-                let cell8 = tableView.dequeueReusableCellWithIdentifier("tableCell8")
-                return cell8!
-            } else {
-                let cell9 = tableView.dequeueReusableCellWithIdentifier("tableCell9")
-                return cell9!
-            }
+            let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4") as? Page1DetailCell4TableViewCell
+            return cell4!
+        } else if indexPath.section == 5 {
+            let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5") as? Page1DetailCell5TableViewCell
+            return cell5!
         } else {
-            let cell10 = tableView.dequeueReusableCellWithIdentifier("tableCell10")
-            return cell10!
+            let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6") as? Page1DetailCell6TableViewCell
+            return cell6!
         }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                return 240
-            } else {
-                return 130
-            }
+            return 240
         } else if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                return 100
-            } else {
-                return 30
-            }
+            return 100
         } else if indexPath.section == 2 {
-            if indexPath.row == 0 {
-                return 90
-            } else {
-                return 30
-            }
-        } else if indexPath.section == 3 {
             return 130
+            //return 224
+        } else if indexPath.section == 3 {
+            //return 224
+            return 104
         } else if indexPath.section == 4 {
-            if indexPath.row == 0 {
-                return 100
-            } else {
-                return 44
-            }
+            return 130
+        } else if indexPath.section == 5 {
+            return 100
         } else {
+            //return 145
+            //return 180
             return 224
         }
     }
@@ -120,17 +92,21 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
         if section == 0 {
             return ""
         } else if section == 1 {
-            return "รายละเอียดสินค้า"
-        } else if section == 2 {
-            return "รีวิวสินค้า"
-        } else if section == 3 {
             return ""
+        } else if section == 2 {
+            //return "Review"
+            return "รายละเอียดสินค้า"
+        } else if section == 3 {
+            return "รีวิวสินค้า"
+            //return "Payment"
         } else if section == 4 {
+            return ""
+            //return "Shop"
+        } else if section == 5{
             return "จัดจำหน่ายโดย"
-        } else if section == 5 {
-            return "สินค้าที่น่าใจของร้านนี้"
+            //return ""
         } else {
-            return "สินค้าที่น่าใจของร้านนี้"
+            return "สินค้าที่น่าสนใจของร้านนี้"
         }
     }
     
@@ -157,3 +133,50 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
     */
 
 }
+
+/*
+ 
+ if indexPath.section == 0 {
+ if indexPath.row == 0 {
+ let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+ return cell0!
+ } else {
+ let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1") as! Page1DetailCell1TableViewCell
+ return cell1
+ }
+ } else if indexPath.section == 1 {
+ if indexPath.row == 0 {
+ let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2")
+ return cell2!
+ } else {
+ let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3")
+ return cell3!
+ }
+ } else if indexPath.section == 2 {
+ if indexPath.row == 0 {
+ let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4")
+ return cell4!
+ } else {
+ let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5")
+ return cell5!
+ }
+ } else if indexPath.section == 3 {
+ let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6")
+ return cell6!
+ } else if indexPath.section == 4 {
+ if indexPath.row == 0 {
+ let cell7 = tableView.dequeueReusableCellWithIdentifier("tableCell7")
+ return cell7!
+ } else if indexPath.row == 1 {
+ let cell8 = tableView.dequeueReusableCellWithIdentifier("tableCell8")
+ return cell8!
+ } else {
+ let cell9 = tableView.dequeueReusableCellWithIdentifier("tableCell9")
+ return cell9!
+ }
+ } else {
+ let cell10 = tableView.dequeueReusableCellWithIdentifier("tableCell10")
+ return cell10!
+ }
+ 
+ */
