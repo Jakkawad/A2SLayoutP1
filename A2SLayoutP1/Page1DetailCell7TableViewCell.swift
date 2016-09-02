@@ -1,5 +1,5 @@
 //
-//  Page1DetailCell6TableViewCell.swift
+//  Page1DetailCell7TableViewCell.swift
 //  A2SLayoutP1
 //
 //  Created by admin on 9/2/2559 BE.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page1DetailCell6TableViewCell: UITableViewCell {
+class Page1DetailCell7TableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

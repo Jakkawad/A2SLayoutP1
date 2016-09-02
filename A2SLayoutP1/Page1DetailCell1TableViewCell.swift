@@ -8,7 +8,40 @@
 
 import UIKit
 
-class Page1DetailCell1TableViewCell: UITableViewCell {
+class Page1DetailCell1TableViewCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var tableView:UITableView!
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return 1
+        }
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+            
+            return cell0!
+        } else {
+            let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1")
+            
+            return cell1!
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return CGFloat.min
+        }
+        return 0.5
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

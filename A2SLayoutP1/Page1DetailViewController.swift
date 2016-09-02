@@ -12,6 +12,37 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
 
     @IBOutlet weak var tableView:UITableView!
     
+    @IBAction func showActionSheet(sender: AnyObject) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        let reportProduct = UIAlertAction(title: "รายงานสินค้านี้", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Delete")
+        })
+        
+        let sharedProduct = UIAlertAction(title: "แชร์", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Shared")
+        })
+        
+        let helpCenter = UIAlertAction(title: "ศูนย์ช่วยเหลือ", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Help")
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        optionMenu.addAction(reportProduct)
+        optionMenu.addAction(sharedProduct)
+        optionMenu.addAction(helpCenter)
+        optionMenu.addAction(cancelAction)
+        
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 7
     }
@@ -51,11 +82,19 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
             let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4") as? Page1DetailCell4TableViewCell
             return cell4!
         } else if indexPath.section == 5 {
-            let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5") as? Page1DetailCell5TableViewCell
-            return cell5!
+            if indexPath.row == 0 {
+                let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5") as? Page1DetailCell5TableViewCell
+                return cell5!
+            } else if indexPath.row == 1 {
+                let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6") as? Page1DetailCell6TableViewCell
+                return cell6!
+            } else {
+                let cell7 = tableView.dequeueReusableCellWithIdentifier("tableCell7") as? Page1DetailCell7TableViewCell
+                return cell7!
+            }
         } else {
-            let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6") as? Page1DetailCell6TableViewCell
-            return cell6!
+            let cell8 = tableView.dequeueReusableCellWithIdentifier("tableCell8") as? Page1DetailCell8TableViewCell
+            return cell8!
         }
     }
     
@@ -63,20 +102,22 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
         if indexPath.section == 0 {
             return 240
         } else if indexPath.section == 1 {
-            return 100
-        } else if indexPath.section == 2 {
             return 130
-            //return 224
+        } else if indexPath.section == 2 {
+            return 100
         } else if indexPath.section == 3 {
-            //return 224
-            return 104
+            return 120
         } else if indexPath.section == 4 {
             return 130
         } else if indexPath.section == 5 {
-            return 100
+            if indexPath.row == 0 {
+                return 100
+            } else if indexPath.row == 1 {
+                return 44
+            } else {
+                return 44
+            }
         } else {
-            //return 145
-            //return 180
             return 224
         }
     }
@@ -85,7 +126,7 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
         if section == 0 {
             return CGFloat.min
         }
-        return 0.5
+        return 20
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -179,4 +220,31 @@ class Page1DetailViewController: UIViewController, UITableViewDataSource, UITabl
  return cell10!
  }
  
+ */
+
+
+/*
+ 
+ if indexPath.section == 0 {
+ let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0") as? Page1DetailCell0TableViewCell
+ return cell0!
+ } else if indexPath.section == 1 {
+ let cell1 = tableView.dequeueReusableCellWithIdentifier("tableCell1") as? Page1DetailCell1TableViewCell
+ return cell1!
+ } else if indexPath.section == 2 {
+ let cell2 = tableView.dequeueReusableCellWithIdentifier("tableCell2") as? Page1DetailCell2TableViewCell
+ return cell2!
+ } else if indexPath.section == 3 {
+ let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3") as? Page1DetailCell3TableViewCell
+ return cell3!
+ } else if indexPath.section == 4 {
+ let cell4 = tableView.dequeueReusableCellWithIdentifier("tableCell4") as? Page1DetailCell4TableViewCell
+ return cell4!
+ } else if indexPath.section == 5 {
+ let cell5 = tableView.dequeueReusableCellWithIdentifier("tableCell5") as? Page1DetailCell5TableViewCell
+ return cell5!
+ } else {
+ let cell6 = tableView.dequeueReusableCellWithIdentifier("tableCell6") as? Page1DetailCell6TableViewCell
+ return cell6!
+ }
  */
