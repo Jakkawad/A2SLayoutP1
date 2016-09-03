@@ -13,19 +13,15 @@ class Page1DetailCell2TableViewCell: UITableViewCell, UITableViewDataSource, UIT
     @IBOutlet weak var tableView:UITableView!
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else {
-            return 1
-        }
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.row == 0 {
             let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
             return cell0!
         } else {
@@ -33,6 +29,15 @@ class Page1DetailCell2TableViewCell: UITableViewCell, UITableViewDataSource, UIT
             return cell1!
         }
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 65
+        } else {
+            return 35
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

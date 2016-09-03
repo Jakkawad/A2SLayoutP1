@@ -8,9 +8,17 @@
 
 import UIKit
 
-class Page1ProductAllViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class Page1ProductAllViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView:UICollectionView!
+    
+    @IBAction func listButton(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func gridButton(sender: AnyObject) {
+        
+    }
     
     @IBAction func searchFilter(sender: AnyObject) {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
@@ -60,13 +68,19 @@ class Page1ProductAllViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 10
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell0 = collectionView.dequeueReusableCellWithReuseIdentifier("tableCell0", forIndexPath: indexPath)
         return cell0
     }
+    
+    /*
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: 375, height: 240)
+    }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()

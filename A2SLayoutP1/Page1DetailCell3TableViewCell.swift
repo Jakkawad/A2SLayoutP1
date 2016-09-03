@@ -30,6 +30,14 @@ class Page1DetailCell3TableViewCell: UITableViewCell, UITableViewDataSource, UIT
         }
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 85
+        } else {
+            return 35
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
