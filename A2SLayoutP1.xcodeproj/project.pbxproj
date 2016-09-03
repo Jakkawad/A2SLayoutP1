@@ -41,6 +41,8 @@
 		845A5E431D76E2C100C6F7C2 /* Page1SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A5E421D76E2C100C6F7C2 /* Page1SubCategoryViewController.swift */; };
 		845A5E451D76E2CA00C6F7C2 /* Page1RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A5E441D76E2CA00C6F7C2 /* Page1RatingViewController.swift */; };
 		8461B1241D7A8EF0005B63E0 /* Page1WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B1231D7A8EF0005B63E0 /* Page1WebViewViewController.swift */; };
+		8461B1281D7A9E42005B63E0 /* ProductsGridFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B1271D7A9E42005B63E0 /* ProductsGridFlowLayout.swift */; };
+		8461B12A1D7A9E89005B63E0 /* ProductsListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461B1291D7A9E89005B63E0 /* ProductsListFlowLayout.swift */; };
 		84832B081D77E40000876242 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 84832B061D77E40000876242 /* star.png */; };
 		84832B091D77E40000876242 /* star0.png in Resources */ = {isa = PBXBuildFile; fileRef = 84832B071D77E40000876242 /* star0.png */; };
 		84832B0C1D781AF000876242 /* Page1FilterCell3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84832B0B1D781AF000876242 /* Page1FilterCell3TableViewCell.swift */; };
@@ -108,6 +110,8 @@
 		845A5E421D76E2C100C6F7C2 /* Page1SubCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page1SubCategoryViewController.swift; sourceTree = "<group>"; };
 		845A5E441D76E2CA00C6F7C2 /* Page1RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page1RatingViewController.swift; sourceTree = "<group>"; };
 		8461B1231D7A8EF0005B63E0 /* Page1WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page1WebViewViewController.swift; sourceTree = "<group>"; };
+		8461B1271D7A9E42005B63E0 /* ProductsGridFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsGridFlowLayout.swift; sourceTree = "<group>"; };
+		8461B1291D7A9E89005B63E0 /* ProductsListFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsListFlowLayout.swift; sourceTree = "<group>"; };
 		84832B061D77E40000876242 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		84832B071D77E40000876242 /* star0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star0.png; sourceTree = "<group>"; };
 		84832B0B1D781AF000876242 /* Page1FilterCell3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page1FilterCell3TableViewCell.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 				845A5E141D76BC9E00C6F7C2 /* Page1 */,
 				845A5DEA1D76BC4700C6F7C2 /* Main.storyboard */,
 				84832B0D1D781C1600876242 /* GeneralClass.swift */,
+				8461B1271D7A9E42005B63E0 /* ProductsGridFlowLayout.swift */,
+				8461B1291D7A9E89005B63E0 /* ProductsListFlowLayout.swift */,
 				845A5DED1D76BC4700C6F7C2 /* Assets.xcassets */,
 				845A5DEF1D76BC4700C6F7C2 /* LaunchScreen.storyboard */,
 				84832B0A1D77E40700876242 /* Icon */,
@@ -533,6 +539,7 @@
 				845A5E431D76E2C100C6F7C2 /* Page1SubCategoryViewController.swift in Sources */,
 				845A5E2C1D76CBD300C6F7C2 /* Page1OptionCell1TableViewCell.swift in Sources */,
 				31D3B46B1D78698F00A5B4DA /* Page1DetailCell3TableViewCell.swift in Sources */,
+				8461B1281D7A9E42005B63E0 /* ProductsGridFlowLayout.swift in Sources */,
 				845A5E371D76D42C00C6F7C2 /* Page1OptionSelect5ViewController.swift in Sources */,
 				31D3B46E1D7869A400A5B4DA /* Page1DetailCell4TableViewCell.swift in Sources */,
 				84832B0E1D781C1600876242 /* GeneralClass.swift in Sources */,
@@ -541,6 +548,7 @@
 				845A5E351D76D42600C6F7C2 /* Page1OptionSelect4ViewController.swift in Sources */,
 				845A5E331D76D42000C6F7C2 /* Page1OptionSelect3ViewController.swift in Sources */,
 				8461B1241D7A8EF0005B63E0 /* Page1WebViewViewController.swift in Sources */,
+				8461B12A1D7A9E89005B63E0 /* ProductsListFlowLayout.swift in Sources */,
 				84832B0C1D781AF000876242 /* Page1FilterCell3TableViewCell.swift in Sources */,
 				31D3B4681D78698400A5B4DA /* Page1DetailCell2TableViewCell.swift in Sources */,
 				845A5DE91D76BC4700C6F7C2 /* ViewController.swift in Sources */,

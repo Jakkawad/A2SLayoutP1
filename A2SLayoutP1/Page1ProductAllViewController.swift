@@ -10,14 +10,39 @@ import UIKit
 
 class Page1ProductAllViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    let gridFlowLayout = ProductsGridFlowLayout()
+    /// Flow layout that displays cells with a List layout, like in a tableView
+    let listFlowLayout = ProductsListFlowLayout()
+    
+    /// True if the current flow layout is a grid
+    var isGridFlowLayoutUsed: Bool = false {
+        didSet {
+            //listButton.alpha = (isGridFlowLayoutUsed == true) ? 0.9 : 1.0
+            //gridButton.alpha = (isGridFlowLayoutUsed == true) ? 1.0 : 0.9
+        }
+    }
+    
+    @IBOutlet var gridButton: UIButton!
+    @IBOutlet var listButton: UIButton!
     @IBOutlet weak var collectionView:UICollectionView!
     
     @IBAction func listButton(sender: AnyObject) {
-        
+        isGridFlowLayoutUsed = false
+        collectionView.reloadData()
+        print(isGridFlowLayoutUsed)
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
+        }
     }
     
     @IBAction func gridButton(sender: AnyObject) {
-        
+        isGridFlowLayoutUsed = true
+        collectionView.reloadData()
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.collectionView.setCollectionViewLayout(self.gridFlowLayout, animated: false)
+        }
     }
     
     @IBAction func searchFilter(sender: AnyObject) {
@@ -63,6 +88,15 @@ class Page1ProductAllViewController: UIViewController, UICollectionViewDataSourc
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
+    func setupInitialLayout() {
+        isGridFlowLayoutUsed = true
+        collectionView.collectionViewLayout = gridFlowLayout
+    }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -72,8 +106,21 @@ class Page1ProductAllViewController: UIViewController, UICollectionViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell0 = collectionView.dequeueReusableCellWithReuseIdentifier("tableCell0", forIndexPath: indexPath)
-        return cell0
+        //let cell0 = collectionView.dequeueReusableCellWithReuseIdentifier("tableCell0", forIndexPath: indexPath)
+        //return cell0
+        
+        var tableCell:String!
+        if isGridFlowLayoutUsed == true {
+            tableCell = "tableCell0"
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(tableCell, forIndexPath: indexPath)// as! PhotoCollectionCell
+            return cell
+            
+        } else {
+            tableCell = "tableCell1"
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(tableCell, forIndexPath: indexPath)// as! PhotoCollectionCell
+            return cell
+        }
+
     }
     
     /*
@@ -85,6 +132,7 @@ class Page1ProductAllViewController: UIViewController, UICollectionViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupInitialLayout()
         // Do any additional setup after loading the view.
     }
 
