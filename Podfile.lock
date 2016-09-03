@@ -1,0 +1,31 @@
+PODS:
+  - Alamofire (3.4.2)
+  - AlamofireImage (2.4.1):
+    - Alamofire (~> 3.3)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - ImageSlideshow/Alamofire (0.5.1):
+    - AlamofireImage (~> 2.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (0.5.1)
+  - MapleBacon (2.0.8)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - FMDB (~> 2.6)
+  - ImageSlideshow/Alamofire
+  - MapleBacon
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  ImageSlideshow: 933e24f8767948b27a81d40c0b616afb724120e3
+  MapleBacon: 32e3590e1730485b93f450283ff242f9444efc12
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0

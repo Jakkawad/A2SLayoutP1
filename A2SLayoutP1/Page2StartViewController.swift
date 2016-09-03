@@ -1,14 +1,14 @@
 //
-//  Page1StartViewController.swift
+//  Page2StartViewController.swift
 //  A2SLayoutP1
 //
-//  Created by admin on 8/31/2559 BE.
+//  Created by admin on 9/3/2559 BE.
 //  Copyright © 2559 All2Sale. All rights reserved.
 //
 
 import UIKit
 
-class Page1StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Page2StartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView:UITableView!
     
@@ -17,20 +17,13 @@ class Page1StartViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+        
         return cell0!
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 224
-        } else {
-            return 224
-        }
     }
     
     override func viewDidLoad() {
