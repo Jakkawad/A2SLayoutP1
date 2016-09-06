@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Page1FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Page1FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var sortArray:[String] = ["สินค้าล่าสุด", "ราคาต่ำ - สูง", "ราคาสูง - ต่ำ", "เรียงตามชื่อ A-Z", "เรียงตามชื่อ Z-A"]
     var categoryArray:[String] = []
@@ -82,12 +82,32 @@ class Page1FilterViewController: UIViewController, UITableViewDataSource, UITabl
             return cell2!
         } else {
             let cell3 = tableView.dequeueReusableCellWithIdentifier("tableCell3") as! Page1FilterCell3TableViewCell
+            /*
+            cell3.txtPriceStart.delegate = self
+            cell3.txtPriceEnd.delegate = self
+            */
+            
             priceStart = cell3.priceStart
             priceEnd = cell3.priceEnd
+            
             return cell3
         }
     }
+    // TextFieldDelegate
+    /*
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print("TextField should return method called")
+        textField.resignFirstResponder()
+        return true
+    }
     
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        print("TextField should and editing method called")
+        priceStart = txtPriceStart.text
+        priceEnd = txtPriceEnd.text
+        return true
+    }
+    */
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
     }

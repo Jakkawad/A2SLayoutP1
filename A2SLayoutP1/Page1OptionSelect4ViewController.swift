@@ -9,6 +9,8 @@
 import UIKit
 
 class Page1OptionSelect4ViewController: UIViewController {
+    
+    var option4Array = []
 
     @IBOutlet weak var tableView:UITableView!
     
@@ -17,11 +19,12 @@ class Page1OptionSelect4ViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return option4Array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+        cell0?.textLabel?.text = option4Array[indexPath.row] as! String
         return cell0!
     }
     

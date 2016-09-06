@@ -10,6 +10,8 @@ import UIKit
 
 class Page1OptionSelect2ViewController: UIViewController {
 
+    var option2Array = []
+    
     @IBOutlet weak var tableView:UITableView!
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -17,11 +19,12 @@ class Page1OptionSelect2ViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return option2Array.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell0 = tableView.dequeueReusableCellWithIdentifier("tableCell0")
+        cell0?.textLabel?.text = option2Array[indexPath.row] as! String
         return cell0!
     }
     

@@ -10,6 +10,10 @@ import UIKit
 
 class Page1OptionCell0TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageViewLogo: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
