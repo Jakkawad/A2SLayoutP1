@@ -15,6 +15,14 @@ class Page2StartViewController: UIViewController, UITableViewDataSource, UITable
     
     var cartArray:[[String:String]] = []
 
+    var selectionOption1:String!
+    var selectionOption2:String!
+    var selectionOption3:String!
+    
+    @IBAction func btnClear(sender: AnyObject) {
+        
+    }
+    
     @IBOutlet weak var tableView:UITableView!
     
     func openDB() {
@@ -29,6 +37,7 @@ class Page2StartViewController: UIViewController, UITableViewDataSource, UITable
                 
             }
         }
+        print(path)
         self.database = FMDatabase(path: path)
         self.database.open()
         self.query()
@@ -50,12 +59,12 @@ class Page2StartViewController: UIViewController, UITableViewDataSource, UITable
                 let option5 = rs.stringForColumn("option5")
                 let quilty = rs.stringForColumn("quilty")
                 let price = rs.stringForColumn("price")
-                let item:[String:String] = ["cart_id":cart_id, "datetime":datetime, "option1":option1, "quilty":quilty, "price":price]
-                //let item:[String:String] = ["cart_id":cart_id, "product_id":product_id, "user_id":user_id, "shop_id":shop_id, "datetime":datetime, "option1":option1, "option2":option2, "option3":option3, "option4":option4, "option5":option5, "quilty":quilty, "price":price]
+                //let item:[String:String] = ["cart_id":cart_id, "datetime":datetime, "option1":option1, "quilty":quilty, "price":price]
+                let item:[String:String] = ["cart_id":cart_id, "product_id":product_id, "user_id":user_id, "shop_id":shop_id, "datetime":datetime, "option1":option1, "option2":option2, "option3":option3, "option4":option4, "option5":option5, "quilty":quilty, "price":price]
                 self.cartArray.append(item)
             }
             self.tableView.reloadData()
-            print(cartArray)
+            //print(cartArray)
         } else {
             print("SELECT FAIL")
         }
@@ -98,12 +107,30 @@ class Page2StartViewController: UIViewController, UITableViewDataSource, UITable
         openDB()
         
         do {
-            try database.executeUpdate("INSERT INTO cart(product_id,user_id,shop_id,option1,quilty,price) VALUES(?,?,?,?,?,?)", values: ["3230","3378","3268","Size:XL","10","1000"])
+            try database.executeUpdate("INSERT INTO cart(product_id,user_id,shop_id,option1,option2,option3,option4,option5,quilty,price) VALUES(?,?,?,?,?,?,?,?,?,?)", values: ["3230","3378","3268","Size:XL","option2","option3","option4","option5","10","1000"])
             
         } catch let error as NSError {
             print(error)
         }
-        self.tableView.reloadData()
+        selectionOption1 = "Size"
+        selectionOption2 = "Color"
+        if selectionOption1 == nil {
+            print("Option1 = Nil")
+        } else {
+            print("Option1 != Nil")
+        }
+        
+        if selectionOption2 == nil {
+            print("Option2 = Nil")
+        } else {
+            print("Option2 != Nil")
+        }
+        
+        if selectionOption1 == nil || selectionOption2 == nil || selectionOption3 == nil {
+            print("== Nil")
+        } else {
+            print("!= Nil")
+        }
         // Do any additional setup after loading the view.
     }
 

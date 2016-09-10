@@ -62,7 +62,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tws-zb-fe9">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="6NF-i2-lZc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="6NF-i2-lZc">
+                            <connections>
+                                <action selector="btnClear:" destination="x5j-ra-usd" id="0W2-55-ave"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JGE-ge-De7" id="fZ6-fS-OZn"/>

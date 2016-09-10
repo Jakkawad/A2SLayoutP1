@@ -31,7 +31,7 @@ class Page1OptionViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView:UITableView!
     
     @IBAction func btnDone(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        
         print("Option1 \(option1Selected)")
         print("Option2 \(option2Selected)")
         print("Option3 \(option3Selected)")
@@ -39,7 +39,7 @@ class Page1OptionViewController: UIViewController, UITableViewDataSource, UITabl
         print("Option5 \(option5Selected)")
         print("Quilty \(quilty)")
         print("total \(total)")
-        
+        self.navigationController?.popViewControllerAnimated(true)
         /*
         if !database.executeUpdate("INSERT INTO cart(product_id) VALUES(?)", withArgumentsInArray:[quilty] ) {
             print("insert fail \(database.lastErrorMessage())")
